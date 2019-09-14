@@ -2,9 +2,9 @@ import React from "react";
 import { Lottery } from "./lotteryDisplayPresenter.js";
 
 export class LotteryDisplayContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <div>
