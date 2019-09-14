@@ -3,7 +3,7 @@ import "./lotteryDisplayPresenter.css";
 
 export function Lottery(props) {
   return (
-    <div class="lotteryDisplayPresenter">
+    <div className="lotteryDisplayPresenter">
       {props.value.map(num => num + " ")}
     </div>
   );
