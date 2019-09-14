@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+div {
+  border: 1px solid rgb(201, 198, 198);
+  /* width: 300px;
+  height: 100px; */
+  margin: 10px;
+}
