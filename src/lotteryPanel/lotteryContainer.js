@@ -1,15 +1,17 @@
 import React from "react";
 import { LotteryDisplayContainer } from "./lotteryDisplayContainer.js";
 import { LotteryButtonContainer } from "./button/lotteryButtonContainer.js";
+import { ChangeNumOfPeopleContainer } from "./changeNumOfPeople/changeNumOfPeopleContainer.js";
 import shuffle from "lodash/shuffle";
-import memoize from "lodash/memoize";
-import uniq from "lodash/uniq";
+// import memoize from "lodash/memoize";
+// import uniq from "lodash/uniq";
 
 export class LotteryContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      wonIndexes: [],
+      targetNums: this.props.lotteryNums,
+      wonNums: [],
       chosenNum: 3
     };
     this.selectLot = this.selectLot.bind(this);
@@ -24,16 +26,42 @@ export class LotteryContainer extends React.Component {
   //   );
   // });
 
+  changeChosenNum(addNum) {
+    if (
+      typeof addNum !== "number" ||
+      Number.isNaN(addNum) ||
+      this.state.chosenNum + addNum < 0
+    ) {
+      console.log("this value is not number or cannot calc.");
+      return;
+    }
+    this.setState({
+      chosenNum: this.state.chosenNum + addNum
+    });
+  }
+
   selectLot = () => {
     // 配列から指定された数の要素をランダムに取り出し、
-    console.log("selectLot");
+    // const nums = shuffle(this.state.targetNums).slice(0, this.state.chosenNum);
+    // const selectedNums = shuffle(this.state.targetNums).pop();
 
-    const nums = shuffle(this.props.lotteryNums).slice(0, this.state.chosenNum);
-    // const nums = shuffle(this.props.lotteryNums).slice(0, this.state.chosenNum);
+    // console.log(selectedNums);
 
+    // // そのインデックスを取得する。
+    // let selectedNumsIndex = [];
+    // selectedNums.map(num =>
+    //   selectedNumsIndex.push(this.state.targetNums.indexOf(num))
+    // );
+    // console.log(selectedNumsIndex);
+
+    // // 取得したインデックスをもとに、選ばれたくじを削除する。
+    // selectedNumsIndex.map(num => this.state.targetNums.splice(num, 1));
+
+    // TODO: わからないので仮置き
     this.setState(
       {
-        winningIndexes: nums
+        wonNums: shuffle(this.state.targetNums).slice(0, this.state.chosenNum)
+        //     // targetNums: splicedTargetNums
       },
       console.log
     );
@@ -45,13 +73,15 @@ export class LotteryContainer extends React.Component {
     return (
       <div>
         LotteryContainer
-        <div>上の方ヘッダ</div>
-        <LotteryDisplayContainer lotteryNums={this.state.winningIndexes} />
+        <LotteryDisplayContainer lotteryNums={this.state.wonNums} />
         <LotteryButtonContainer
           selectLot={() => this.selectLot()}
           lotteryNums={this.props.lotteryNums}
         />
-        <div>下右人数変更</div>
+        <ChangeNumOfPeopleContainer
+          chosenNum={this.state.chosenNum}
+          changeChosenNum={num => this.changeChosenNum(num)}
+        />
       </div>
     );
   }
