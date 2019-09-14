@@ -1,5 +1,5 @@
 import React from "react";
-import { Lottery } from "./lotteryPresenter.js";
+import { Lottery } from "./lotteryDisplayPresenter.js";
 
 export class LotteryContainer extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ export class LotteryContainer extends React.Component {
       <div>
         LotteryContainer
         {/* {this.props.lotteryNums} */}
+        <div></div>
         <Lottery value={this.props.lotteryNums} />
       </div>
     );

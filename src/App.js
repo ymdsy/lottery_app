@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { LotteryContainer } from "./lotteryPanel/lotteryContainer";
+import { LotteryContainer } from "./lotteryPanel/lotteryDisplayContainer";
 
 class App extends React.Component {
   constructor() {
