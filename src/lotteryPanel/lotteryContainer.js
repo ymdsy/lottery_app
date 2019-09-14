@@ -3,15 +3,16 @@ import { LotteryDisplayContainer } from "./lotteryDisplayContainer.js";
 import { LotteryButtonContainer } from "./button/lotteryButtonContainer.js";
 import shuffle from "lodash/shuffle";
 import memoize from "lodash/memoize";
+import uniq from "lodash/uniq";
 
 export class LotteryContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      winningIndexes: [],
+      wonIndexes: [],
       chosenNum: 3
     };
-    // this.drawLots = this.drawLots.bind(this);
+    this.selectLot = this.selectLot.bind(this);
   }
 
   // drawLots = memoize(lotteryNums => {
@@ -23,18 +24,33 @@ export class LotteryContainer extends React.Component {
   //   );
   // });
 
-  render() {
-    const lotteryNums = shuffle(this.props.lotteryNums).slice(
-      0,
-      this.state.chosenNum
+  selectLot = () => {
+    // 配列から指定された数の要素をランダムに取り出し、
+    console.log("selectLot");
+
+    const nums = shuffle(this.props.lotteryNums).slice(0, this.state.chosenNum);
+    // const nums = shuffle(this.props.lotteryNums).slice(0, this.state.chosenNum);
+
+    this.setState(
+      {
+        winningIndexes: nums
+      },
+      console.log
     );
+  };
+
+  render() {
+    // const lotteryNums = this.selectLot();
 
     return (
       <div>
         LotteryContainer
         <div>上の方ヘッダ</div>
-        <LotteryDisplayContainer lotteryNums={lotteryNums} />
-        <LotteryButtonContainer />
+        <LotteryDisplayContainer lotteryNums={this.state.winningIndexes} />
+        <LotteryButtonContainer
+          selectLot={() => this.selectLot()}
+          lotteryNums={this.props.lotteryNums}
+        />
         <div>下右人数変更</div>
       </div>
     );
