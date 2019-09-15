@@ -5,7 +5,7 @@ export function LotteryButton(props) {
   return (
     <button
       onClick={() => {
-        props.selectLot();
+        props.drawLots();
       }}
     >
       抽選する
