@@ -2,15 +2,17 @@ import React from "react";
 import { LotteryDisplayContainer } from "./lotteryDisplayContainer.js";
 import { LotteryButtonContainer } from "./button/lotteryButtonContainer.js";
 import { ChangeNumOfPeopleContainer } from "./changeNumOfPeople/changeNumOfPeopleContainer.js";
+import { HistoryContainer } from "./history/historyContainer.js";
 
 const NUM_FORMAT_ERR_MSG = "this value is not number or cannot calc.";
+const ALL_LOTS_DRAW_MSG = "all lots was draw.";
 
 export class LotteryContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       targetLots: this.props.lots,
-      wonNums: [],
+      wonLots: [],
       chosenNum: 3
     };
     this.drawLots = this.drawLots.bind(this);
@@ -34,16 +36,17 @@ export class LotteryContainer extends React.Component {
     const wonLots = [];
     const target = this.state.targetLots.slice();
     for (let i = 0; i < this.state.chosenNum; i++) {
+      //　これ以上くじが引けないエラー
       if (target.length === 0) {
-        console.log("all lots was draw.");
+        console.log(ALL_LOTS_DRAW_MSG);
         break;
       }
-      const drawLot = Math.floor(Math.random() * target.length);
-      wonLots.push(target[drawLot]);
-      target.splice(drawLot, 1);
+      const drawLotIndex = Math.floor(Math.random() * target.length);
+      wonLots.push(target[drawLotIndex]);
+      target.splice(drawLotIndex, 1);
     }
     this.setState({
-      wonNums: wonLots,
+      wonLots: wonLots,
       targetLots: target
     });
   };
@@ -51,8 +54,9 @@ export class LotteryContainer extends React.Component {
   render() {
     return (
       <div>
+        <HistoryContainer />
         LotteryContainer
-        <LotteryDisplayContainer lotteryNums={this.state.wonNums} />
+        <LotteryDisplayContainer wonLots={this.state.wonLots} />
         <LotteryButtonContainer
           drawLots={() => this.drawLots()}
           lotteryNums={this.props.lots}

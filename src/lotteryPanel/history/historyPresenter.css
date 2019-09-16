@@ -1,0 +1,10 @@
+.historyBtn {
+  float: right;
+}
+
+#history {
+  background-color: white;
+  display: none;
+  float: right;
+  position: static;
+}

@@ -6,11 +6,6 @@ export class LotteryButtonContainer extends React.Component {
   //   super(props);
   // }
   render() {
-    return (
-      <LotteryButton
-        drawLots={() => this.props.drawLots()}
-        lotteryNums={this.props.lotteryNums}
-      />
-    );
+    return <LotteryButton drawLots={() => this.props.drawLots()} />;
   }
 }

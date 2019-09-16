@@ -9,8 +9,7 @@ export class LotteryDisplayContainer extends React.Component {
     return (
       <div>
         LotteryDisplayContainer
-        {/* {this.props.lotteryNums} */}
-        <Lottery value={this.props.lotteryNums} />
+        <Lottery value={this.props.wonLots} />
       </div>
     );
   }
