@@ -12,6 +12,7 @@ export class LotteryContainer extends React.Component {
     super(props);
     this.state = {
       targetLots: this.props.lots,
+      latestWonLots: [],
       wonLots: [],
       chosenNum: 3
     };
@@ -33,7 +34,7 @@ export class LotteryContainer extends React.Component {
   }
 
   drawLots = () => {
-    const wonLots = [];
+    const latestWonLots = [];
     const target = this.state.targetLots.slice();
     for (let i = 0; i < this.state.chosenNum; i++) {
       //　これ以上くじが引けないエラー
@@ -42,10 +43,18 @@ export class LotteryContainer extends React.Component {
         break;
       }
       const drawLotIndex = Math.floor(Math.random() * target.length);
-      wonLots.push(target[drawLotIndex]);
+      latestWonLots.push(target[drawLotIndex]);
       target.splice(drawLotIndex, 1);
     }
+
+    // 取得された最新のくじを引かれたくじに追加
+    const wonLots = this.state.wonLots.slice();
+    latestWonLots.map(lot => {
+      wonLots.push(lot);
+    });
+
     this.setState({
+      latestWonLots: latestWonLots,
       wonLots: wonLots,
       targetLots: target
     });
@@ -56,7 +65,7 @@ export class LotteryContainer extends React.Component {
       <div>
         <HistoryContainer wonLots={this.state.wonLots} />
         LotteryContainer
-        <LotteryDisplayContainer wonLots={this.state.wonLots} />
+        <LotteryDisplayContainer wonLots={this.state.latestWonLots} />
         <LotteryButtonContainer
           drawLots={() => this.drawLots()}
           lotteryNums={this.props.lots}
