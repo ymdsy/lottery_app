@@ -10,7 +10,9 @@ export function History(props) {
       <div id="history">
         履歴
         <ul>
-          <li>a</li>
+          {props.wonLots.map(lot => (
+            <li>{lot}</li>
+          ))}
         </ul>
       </div>
     </div>

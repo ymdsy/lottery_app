@@ -54,7 +54,7 @@ export class LotteryContainer extends React.Component {
   render() {
     return (
       <div>
-        <HistoryContainer />
+        <HistoryContainer wonLots={this.state.wonLots} />
         LotteryContainer
         <LotteryDisplayContainer wonLots={this.state.wonLots} />
         <LotteryButtonContainer
