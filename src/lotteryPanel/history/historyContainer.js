@@ -2,14 +2,18 @@ import React from "react";
 import { History } from "./historyPresenter.js";
 
 export class HistoryContainer extends React.Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.switchHistory = this.switchHistory.bind(this);
+  }
 
   switchHistory() {
-    const history = document.getElementById("history");
-    history.style.display =
-      history.style.display.toString() === "block" ? "none" : "block";
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
   render() {
@@ -17,6 +21,7 @@ export class HistoryContainer extends React.Component {
       <History
         wonLots={this.props.wonLots}
         switchHistory={this.switchHistory}
+        isOpen={this.state.isOpen}
       />
     );
   }

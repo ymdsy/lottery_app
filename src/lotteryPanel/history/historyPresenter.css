@@ -2,9 +2,13 @@
   float: right;
 }
 
-#history {
+.history {
   background-color: white;
   display: none;
   float: right;
   position: static;
+}
+
+.history__active {
+  display: block;
 }
