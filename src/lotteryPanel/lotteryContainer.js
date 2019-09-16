@@ -19,6 +19,10 @@ export class LotteryContainer extends React.Component {
     this.drawLots = this.drawLots.bind(this);
   }
 
+  /**
+   * 一度に抽選するくじの数を変更するためのメソッド。
+   * @param {加える人数} addNum
+   */
   changeChosenNum(addNum) {
     if (
       typeof addNum !== "number" ||
@@ -33,6 +37,10 @@ export class LotteryContainer extends React.Component {
     });
   }
 
+  /**
+   * くじを引くメソッド。
+   * 引かれたくじは抽選可能なくじから消え、引かれたくじとして登録される。
+   */
   drawLots = () => {
     const latestWonLots = [];
     const target = this.state.targetLots.slice();
@@ -64,7 +72,6 @@ export class LotteryContainer extends React.Component {
     return (
       <div>
         <HistoryContainer wonLots={this.state.wonLots} />
-        LotteryContainer
         <LotteryDisplayContainer wonLots={this.state.latestWonLots} />
         <LotteryButtonContainer
           drawLots={() => this.drawLots()}

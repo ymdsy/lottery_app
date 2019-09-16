@@ -16,7 +16,7 @@ export class HistoryContainer extends React.Component {
     return (
       <History
         wonLots={this.props.wonLots}
-        switchHistory={() => this.switchHistory()}
+        switchHistory={this.switchHistory}
       />
     );
   }
