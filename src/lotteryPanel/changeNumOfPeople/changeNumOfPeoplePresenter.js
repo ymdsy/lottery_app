@@ -6,15 +6,15 @@ export function ChangeNumOfPeople(props) {
     <div>
       <button
         onClick={() => {
-          props.changeChosenNum(-1);
+          props.addChosenNum(-1);
         }}
       >
         -
       </button>
-      {props.num}
+      <input type="text" value={props.num} onChange={props.changeChosenNum} />
       <button
         onClick={() => {
-          props.changeChosenNum(1);
+          props.addChosenNum(1);
         }}
       >
         +
