@@ -1,5 +1,6 @@
 import React from "react";
 import "./historyPresenter.css";
+import { HistoryDeleteContainer } from "./historyDeleteContainer.js";
 
 export function History(props) {
   return (
@@ -10,9 +11,10 @@ export function History(props) {
       <div className={props.isOpen ? "history history__active" : "history"}>
         <ul>
           {props.wonLots.map(lot => (
-            <li>{lot}</li>
+            <li key={lot.toString()}>{lot}</li>
           ))}
         </ul>
+        <HistoryDeleteContainer deleteHistory={() => props.deleteHistory()} />
       </div>
     </div>
   );

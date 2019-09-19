@@ -68,10 +68,21 @@ export class LotteryContainer extends React.Component {
     });
   };
 
+  deleteHistory() {
+    this.setState({
+      targetLots: this.props.lots,
+      latestWonLots: [],
+      wonLots: []
+    });
+  }
+
   render() {
     return (
       <div>
-        <HistoryContainer wonLots={this.state.wonLots} />
+        <HistoryContainer
+          wonLots={this.state.wonLots}
+          deleteHistory={() => this.deleteHistory()}
+        />
         <LotteryDisplayContainer wonLots={this.state.latestWonLots} />
         <LotteryButtonContainer
           drawLots={() => this.drawLots()}

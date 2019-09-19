@@ -19,6 +19,7 @@ export class HistoryContainer extends React.Component {
   render() {
     return (
       <History
+        deleteHistory={() => this.props.deleteHistory()}
         wonLots={this.props.wonLots}
         switchHistory={this.switchHistory}
         isOpen={this.state.isOpen}
