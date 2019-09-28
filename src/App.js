@@ -1,21 +1,33 @@
 import React from "react";
 import "./App.css";
-// import { LotteryContainer } from "./lotteryPanel/lotteryContainer.js";
-import { SwitchContainer } from "./switchPanel/switchContainer.js";
+import { SwitchPanel } from "./switchPanel/switchPanel.js";
+import { ContentContainer } from "./ContentContainer.js";
 
 class App extends React.Component {
   constructor() {
     super(); // これが必要な理由調べること。
     this.state = {
       lots: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
-      mode: 1
+      mode: 0
     };
+
+    this.switching = this.switching.bind(this);
   }
+
+  switching(num) {
+    if (num === 0 || num === 1) {
+      this.setState({
+        mode: num
+      });
+    }
+  }
+
   render() {
     return (
       <div>
         App Component
-        <SwitchContainer lots={this.state.lots} mode={this.state.mode} />
+        <SwitchPanel switching={num => this.switching(num)} />
+        <ContentContainer mode={this.state.mode} lots={this.state.lots} />
       </div>
     );
   }
