@@ -1,5 +1,6 @@
 import React from "react";
 import { LotteryContainer } from "./lotteryPanel/lotteryContainer.js";
+import { SettingContainer } from "./settingPanel/settingContainer.js";
 
 export function ContentContainer(props) {
   if (props.mode === 0) {
@@ -10,6 +11,10 @@ export function ContentContainer(props) {
       </div>
     );
   } else if (props.mode === 1) {
-    return <div>mode 1</div>;
+    return (
+      <div>
+        <SettingContainer lots={props.lots} />
+      </div>
+    );
   }
 }
