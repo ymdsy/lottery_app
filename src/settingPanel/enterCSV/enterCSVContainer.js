@@ -1,11 +1,16 @@
 import React from "react";
-// import { EnterLotteryContainer } from "./enterLotteryContainer.js";
+import { EnterCSVPresenter } from "./enterCSVPresenter.js";
 
 export class EnterCSVContainer extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
-    return <div>EnterCSVContainer</div>;
+    return (
+      <div>
+        EnterCSVContainer
+        <EnterCSVPresenter />
+      </div>
+    );
   }
 }
