@@ -1,5 +1,6 @@
 import React from "react";
 import { SelectEnterModeContainer } from "./selectEnterModeContainer.js";
+import { EnterLotteryContainer } from "./enterLotteryContainer.js";
 
 export class SettingContainer extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ export class SettingContainer extends React.Component {
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
+        <EnterLotteryContainer mode={this.state.lotteryEnterMode} />
         <div>もう一個、背景画像入力フォーム</div>
       </div>
     );
