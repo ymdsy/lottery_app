@@ -1,13 +1,12 @@
 import React from "react";
-// import { LotteryContainer } from "./lotteryPanel/lotteryContainer.js";
+import { EnterCSVContainer } from "./enterCSV/enterCSVContainer.js";
 // import { SettingContainer } from "./settingPanel/settingContainer.js";
 
 export function EnterLotteryContainer(props) {
   if (props.mode === 0) {
     return (
       <div>
-        CSV!
-        {/* <EnterCSVContainer /> */}
+        <EnterCSVContainer />
       </div>
     );
   } else if (props.mode === 1) {
