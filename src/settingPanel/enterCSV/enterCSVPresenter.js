@@ -3,7 +3,7 @@ import React from "react";
 export function EnterCSVPresenter(props) {
   return (
     <div>
-      <textarea onChange={() => console.log("changed")} />
+      <textarea value={props.value} onChange={props.parseCSV} />
     </div>
   );
 }
