@@ -1,5 +1,5 @@
 import React from "react";
-import { EnterLotteryContainer } from "./enterLotteryContainer.js";
+import { SelectEnterModeContainer } from "./selectEnterModeContainer.js";
 
 export class SettingContainer extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export class SettingContainer extends React.Component {
   render() {
     return (
       <div>
-        <EnterLotteryContainer
+        <SelectEnterModeContainer
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />

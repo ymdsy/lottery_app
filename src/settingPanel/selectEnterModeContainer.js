@@ -1,7 +1,7 @@
 import React from "react";
 import { LotteryKindSwitchPanel } from "./lotteryKindSwitchPanel.js";
 
-export class EnterLotteryContainer extends React.Component {
+export class SelectEnterModeContainer extends React.Component {
   constructor(props) {
     super(props);
   }
