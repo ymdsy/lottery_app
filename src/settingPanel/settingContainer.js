@@ -1,6 +1,7 @@
 import React from "react";
 import { SelectEnterModeContainer } from "./selectEnterModeContainer.js";
 import { EnterLotteryContainer } from "./enterLotteryContainer.js";
+import { DisplayEnterLotteryPresenter } from "./displayEnterLotteryPresenter";
 
 const CSV_MODE = 0;
 const NUMBER_MODE = 1;
@@ -17,7 +18,7 @@ export class SettingContainer extends React.Component {
   }
 
   switchLotteryEnterMode(mode) {
-    if (mode === CSV_MODE || NUMBER_MODE === 1) {
+    if (mode === CSV_MODE || mode === NUMBER_MODE) {
       this.setState({
         lotteryEnterMode: mode
       });
@@ -39,12 +40,16 @@ export class SettingContainer extends React.Component {
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
-        <EnterLotteryContainer
-          mode={this.state.lotteryEnterMode}
-          updateParsedData={parsedData => {
-            this.updateParsedData(parsedData);
-          }}
-        />
+        <div>
+          <EnterLotteryContainer
+            mode={this.state.lotteryEnterMode}
+            updateParsedData={parsedData => {
+              this.updateParsedData(parsedData);
+            }}
+          />
+          =>
+          <DisplayEnterLotteryPresenter values={this.state.parsedData} />
+        </div>
         <div>もう一個、背景画像入力フォーム</div>
       </div>
     );
