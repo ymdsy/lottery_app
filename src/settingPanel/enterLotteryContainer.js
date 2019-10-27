@@ -10,8 +10,8 @@ export function EnterLotteryContainer(props) {
     return (
       <div>
         <EnterCSVContainer
-          updateLots={data => {
-            props.updateLots(data);
+          updateParsedData={parsedData => {
+            props.updateParsedData(parsedData);
           }}
         />
       </div>
