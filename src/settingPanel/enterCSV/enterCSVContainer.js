@@ -11,12 +11,15 @@ export class EnterCSVContainer extends React.Component {
       enterdValue: ""
     };
 
-    this.parseCSV = this.parseCSV.bind(this);
+    this.enterCsv = this.enterCsv.bind(this);
   }
 
-  parseCSV(event) {
+  enterCsv(event) {
+    const parsedData = split(event.target.value, ",");
+    this.props.updateLots(parsedData);
+
     this.setState({
-      parsedData: split(event.target.value, ","),
+      parsedData: parsedData,
       enterdValue: event.target.value
     });
   }
@@ -27,7 +30,7 @@ export class EnterCSVContainer extends React.Component {
         EnterCSVContainer
         <EnterCSVPresenter
           value={this.state.enterdValue}
-          parseCSV={data => this.parseCSV(data)}
+          enterCsv={data => this.enterCsv(data)}
         />
       </div>
     );

@@ -25,7 +25,12 @@ export class SettingContainer extends React.Component {
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
-        <EnterLotteryContainer mode={this.state.lotteryEnterMode} />
+        <EnterLotteryContainer
+          mode={this.state.lotteryEnterMode}
+          updateLots={data => {
+            this.props.updateLots(data);
+          }}
+        />
         <div>もう一個、背景画像入力フォーム</div>
       </div>
     );

@@ -12,6 +12,7 @@ class App extends React.Component {
     };
 
     this.switching = this.switching.bind(this);
+    this.updateLots = this.updateLots.bind(this);
   }
 
   switching(num) {
@@ -22,12 +23,22 @@ class App extends React.Component {
     }
   }
 
+  updateLots(data) {
+    this.setState({
+      lots: data
+    });
+  }
+
   render() {
     return (
       <div>
         App Component
         <SwitchPanel switching={num => this.switching(num)} />
-        <ContentContainer mode={this.state.mode} lots={this.state.lots} />
+        <ContentContainer
+          mode={this.state.mode}
+          lots={this.state.lots}
+          updateLots={data => this.updateLots(data)}
+        />
       </div>
     );
   }

@@ -5,16 +5,21 @@ import { SettingContainer } from "./settingPanel/settingContainer.js";
 export function ContentContainer(props) {
   if (props.mode === 0) {
     return (
-      <div>
+      <>
         contentContainer!
         <LotteryContainer lots={props.lots} />
-      </div>
+      </>
     );
   } else if (props.mode === 1) {
     return (
-      <div>
-        <SettingContainer lots={props.lots} />
-      </div>
+      <>
+        <SettingContainer
+          lots={props.lots}
+          updateLots={data => {
+            props.updateLots(data);
+          }}
+        />
+      </>
     );
   }
 }
