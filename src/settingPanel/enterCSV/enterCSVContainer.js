@@ -1,6 +1,5 @@
 import React from "react";
 import { EnterCSVPresenter } from "./enterCSVPresenter.js";
-import split from "lodash/split";
 
 export class EnterCSVContainer extends React.Component {
   constructor(props) {
@@ -9,7 +8,9 @@ export class EnterCSVContainer extends React.Component {
   }
 
   enterCsv(event) {
-    const parsedData = split(event.target.value, ",");
+    const parsedData = event.target.value
+      .split(/[ ]{0,},{1,}/)
+      .filter(value => value !== " " && value.length > 0);
     this.props.updateParsedData(parsedData);
   }
 
