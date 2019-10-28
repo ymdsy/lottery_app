@@ -3,7 +3,7 @@ import React from "react";
 export function EnterCSVPresenter(props) {
   return (
     <>
-      <textarea onChange={props.enterCsv} />
+      <textarea onChange={event => props.enterCsv(event.target.value)} />
     </>
   );
 }
