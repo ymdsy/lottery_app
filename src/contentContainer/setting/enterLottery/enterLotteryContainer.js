@@ -2,11 +2,8 @@ import React from "react";
 import { EnterCSVContainer } from "./enterCSV/enterCSVContainer.js";
 // import { SettingContainer } from "./settingPanel/settingContainer.js";
 
-const CSV_MODE = 0;
-const NUMBER_MODE = 1;
-
 export function EnterLotteryContainer(props) {
-  if (props.mode === CSV_MODE) {
+  if (props.mode === props.csvMode) {
     return (
       <>
         <EnterCSVContainer
@@ -16,7 +13,7 @@ export function EnterLotteryContainer(props) {
         />
       </>
     );
-  } else if (props.mode === NUMBER_MODE) {
+  } else if (props.mode === props.numberMode) {
     return (
       <>
         Number!

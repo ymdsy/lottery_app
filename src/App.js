@@ -3,6 +3,9 @@ import "./App.css";
 import { SwitchPanel } from "./switchPanel/switchPanel.js";
 import { ContentContainer } from "./contentContainer/ContentContainer.js";
 
+const LOTTERY_MODE = 0;
+const SETTING_MODE = 1;
+
 class App extends React.Component {
   constructor() {
     super(); // これが必要な理由調べること。
@@ -33,7 +36,11 @@ class App extends React.Component {
     return (
       <div>
         App Component
-        <SwitchPanel switching={num => this.switching(num)} />
+        <SwitchPanel
+          lotteryMode={LOTTERY_MODE}
+          settingMode={SETTING_MODE}
+          switching={num => this.switching(num)}
+        />
         <ContentContainer
           mode={this.state.mode}
           lots={this.state.lots}

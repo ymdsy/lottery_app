@@ -42,6 +42,8 @@ export class SettingContainer extends React.Component {
         />
         <div>
           <EnterLotteryContainer
+            csvMode={CSV_MODE}
+            numberMode={NUMBER_MODE}
             mode={this.state.lotteryEnterMode}
             updateParsedData={parsedData => {
               this.updateParsedData(parsedData);
