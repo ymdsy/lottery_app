@@ -1,0 +1,12 @@
+div#switchPanelPresenter {
+  height: 40px;
+}
+
+button.switchPanelPresenterBtn {
+  background-color: aliceblue;
+  border-radius: 5px;
+  float: right;
+  font-size: 1em;
+  padding: 5px;
+  margin: 5px;
+}
