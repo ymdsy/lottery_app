@@ -1,0 +1,8 @@
+div#enterLottery {
+  align-items: center;
+  display: inline-flex;
+  /* background-color: aliceblue; */
+  justify-content: center;
+  padding: 10px;
+  width: 90%;
+}

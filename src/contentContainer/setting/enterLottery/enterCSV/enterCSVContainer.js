@@ -18,8 +18,6 @@ export class EnterCSVContainer extends React.Component {
   render() {
     return (
       <>
-        EnterCSVContainer
-        <br />
         <EnterCSVPresenter enterCsv={value => this.enterCsv(value)} />
       </>
     );

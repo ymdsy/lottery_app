@@ -2,6 +2,7 @@ import React from "react";
 import { SelectEnterModeContainer } from "./selectEnterMode/selectEnterModeContainer.js";
 import { EnterLotteryContainer } from "./enterLottery/enterLotteryContainer.js";
 import { DisplayEnterLotteryPresenter } from "./displayEnterLotteryPresenter";
+import "./settingContainer.css";
 
 const CSV_MODE = 0;
 const NUMBER_MODE = 1;
@@ -40,7 +41,7 @@ export class SettingContainer extends React.Component {
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
-        <div>
+        <div id="enterLottery">
           <EnterLotteryContainer
             csvMode={CSV_MODE}
             numberMode={NUMBER_MODE}
@@ -49,7 +50,7 @@ export class SettingContainer extends React.Component {
               this.updateParsedData(parsedData);
             }}
           />
-          =>
+          &nbsp;=>&nbsp;
           <DisplayEnterLotteryPresenter values={this.state.parsedData} />
         </div>
         <div>もう一個、背景画像入力フォーム</div>
