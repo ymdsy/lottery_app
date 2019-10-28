@@ -6,7 +6,6 @@ export function ContentContainer(props) {
   if (props.mode === 0) {
     return (
       <>
-        contentContainer!
         <LotteryContainer lots={props.lots} />
       </>
     );

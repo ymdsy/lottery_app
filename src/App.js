@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { SwitchPanel } from "./switchPanel/switchPanel.js";
+import { SwitchPanelPresenter } from "./switchPanel/switchPanelPresenter.js";
 import { ContentContainer } from "./contentContainer/ContentContainer.js";
 
 const LOTTERY_MODE = 0;
@@ -34,9 +34,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        App Component
-        <SwitchPanel
+      <>
+        <SwitchPanelPresenter
           lotteryMode={LOTTERY_MODE}
           settingMode={SETTING_MODE}
           switching={num => this.switching(num)}
@@ -46,7 +45,7 @@ class App extends React.Component {
           lots={this.state.lots}
           updateLots={data => this.updateLots(data)}
         />
-      </div>
+      </>
     );
   }
 }

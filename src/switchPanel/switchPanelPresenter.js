@@ -1,9 +1,8 @@
 import React from "react";
 
-export function SwitchPanel(props) {
+export function SwitchPanelPresenter(props) {
   return (
     <div>
-      switchPanel!
       <button onClick={() => props.switching(props.lotteryMode)}>
         lotteryMode
       </button>
