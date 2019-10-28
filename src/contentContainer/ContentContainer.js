@@ -1,6 +1,6 @@
 import React from "react";
-import { LotteryContainer } from "./lotteryPanel/lotteryContainer.js";
-import { SettingContainer } from "./settingPanel/settingContainer.js";
+import { LotteryContainer } from "./lottery/lotteryContainer.js";
+import { SettingContainer } from "./setting/settingContainer.js";
 
 export function ContentContainer(props) {
   if (props.mode === 0) {

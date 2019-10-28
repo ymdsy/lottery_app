@@ -1,6 +1,6 @@
 import React from "react";
-import { SelectEnterModeContainer } from "./selectEnterModeContainer.js";
-import { EnterLotteryContainer } from "./enterLotteryContainer.js";
+import { SelectEnterModeContainer } from "./selectEnterMode/selectEnterModeContainer.js";
+import { EnterLotteryContainer } from "./enterLottery/enterLotteryContainer.js";
 import { DisplayEnterLotteryPresenter } from "./displayEnterLotteryPresenter";
 
 const CSV_MODE = 0;

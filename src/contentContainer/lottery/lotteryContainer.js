@@ -1,6 +1,6 @@
 import React from "react";
-import { LotteryDisplayContainer } from "./lotteryDisplayContainer.js";
-import { LotteryButtonContainer } from "./button/lotteryButtonContainer.js";
+import { LotteryDisplayContainer } from "./lotteryDisplay/lotteryDisplayContainer.js";
+import { LotteryButtonContainer } from "./lotteryButton/lotteryButtonContainer.js";
 import { ChangeNumOfPeopleContainer } from "./changeNumOfPeople/changeNumOfPeopleContainer.js";
 import { HistoryContainer } from "./history/historyContainer.js";
 

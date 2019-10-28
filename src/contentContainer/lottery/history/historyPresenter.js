@@ -2,7 +2,7 @@ import React from "react";
 import "./historyPresenter.css";
 import { HistoryDeleteContainer } from "./historyDeleteContainer.js";
 
-export function History(props) {
+export function HistoryPresenter(props) {
   return (
     <div>
       <button className="historyBtn" onClick={props.switchHistory}>

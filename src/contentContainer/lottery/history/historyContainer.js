@@ -1,5 +1,5 @@
 import React from "react";
-import { History } from "./historyPresenter.js";
+import { HistoryPresenter } from "./historyPresenter.js";
 
 export class HistoryContainer extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export class HistoryContainer extends React.Component {
 
   render() {
     return (
-      <History
+      <HistoryPresenter
         deleteHistory={() => this.props.deleteHistory()}
         wonLots={this.props.wonLots}
         switchHistory={this.switchHistory}

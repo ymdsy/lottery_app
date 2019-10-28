@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { SwitchPanel } from "./switchPanel/switchPanel.js";
-import { ContentContainer } from "./ContentContainer.js";
+import { ContentContainer } from "./contentContainer/ContentContainer.js";
 
 class App extends React.Component {
   constructor() {
