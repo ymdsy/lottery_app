@@ -11,7 +11,7 @@ export class SettingContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lotteryEnterMode: 0,
+      lotteryEnterMode: NUMBER_MODE,
       parsedData: []
     };
 

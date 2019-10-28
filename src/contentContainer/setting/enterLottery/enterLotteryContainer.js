@@ -1,5 +1,6 @@
 import React from "react";
 import { EnterCSVContainer } from "./enterCSV/enterCSVContainer.js";
+import { EnterNumberContainer } from "./enterNumber/enterNumberContainer.js";
 // import { SettingContainer } from "./settingPanel/settingContainer.js";
 
 export function EnterLotteryContainer(props) {
@@ -16,8 +17,13 @@ export function EnterLotteryContainer(props) {
   } else if (props.mode === props.numberMode) {
     return (
       <>
-        Number!
-        {/* <EnterNumberContainer /> */}
+        {
+          <EnterNumberContainer
+            updateParsedData={parsedData => {
+              props.updateParsedData(parsedData);
+            }}
+          />
+        }
       </>
     );
   }
