@@ -72,9 +72,7 @@ export class LotteryContainer extends React.Component {
 
     // 取得された最新のくじを引かれたくじに追加
     const wonLots = this.state.wonLots.slice();
-    latestWonLots.map(lot => {
-      wonLots.push(lot);
-    });
+    latestWonLots.map(lot => wonLots.push(lot));
 
     this.setState({
       latestWonLots: latestWonLots,
