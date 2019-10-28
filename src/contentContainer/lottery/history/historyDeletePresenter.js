@@ -1,9 +1,9 @@
 import React from "react";
 
-export function HistoryDelete(props) {
+export function HistoryDeletePresenter(props) {
   return (
-    <div>
+    <>
       <button onClick={() => props.deleteHistory()}>履歴削除</button>
-    </div>
+    </>
   );
 }

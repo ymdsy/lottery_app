@@ -1,5 +1,10 @@
-.historyBtn {
+button.historyBtn {
+  background-color: aliceblue;
+  border-radius: 5px;
   float: right;
+  font-size: 1em;
+  padding: 5px;
+  margin: 5px;
 }
 
 .history {
@@ -7,6 +12,7 @@
   display: none;
   float: right;
   position: static;
+  width: 100px;
 }
 
 .history__active {

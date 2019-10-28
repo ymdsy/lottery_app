@@ -1,10 +1,10 @@
 import React from "react";
 import "./historyPresenter.css";
-import { HistoryDeleteContainer } from "./historyDeleteContainer.js";
+import { HistoryDeletePresenter } from "./historyDeletePresenter.js";
 
 export function HistoryPresenter(props) {
   return (
-    <div>
+    <>
       <button className="historyBtn" onClick={props.switchHistory}>
         history
       </button>
@@ -14,8 +14,8 @@ export function HistoryPresenter(props) {
             <li key={lot.toString()}>{lot}</li>
           ))}
         </ul>
-        <HistoryDeleteContainer deleteHistory={() => props.deleteHistory()} />
+        <HistoryDeletePresenter deleteHistory={() => props.deleteHistory()} />
       </div>
-    </div>
+    </>
   );
 }
