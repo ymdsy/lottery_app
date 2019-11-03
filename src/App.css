@@ -13,6 +13,9 @@
   padding: 5px;
   min-width: fit-content;
 }
+.btn_active {
+  background-color: rgb(190, 217, 243);
+}
 
 .input {
   border-radius: 5px;

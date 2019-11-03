@@ -37,6 +37,7 @@ class App extends React.Component {
       <>
         <SwitchPanelPresenter
           lotteryMode={LOTTERY_MODE}
+          mode={this.state.mode}
           settingMode={SETTING_MODE}
           switching={num => this.switching(num)}
         />

@@ -38,6 +38,8 @@ export class SettingContainer extends React.Component {
     return (
       <div class="setting">
         <SelectEnterModePresenter
+          csvMode={CSV_MODE}
+          numberMode={NUMBER_MODE}
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
