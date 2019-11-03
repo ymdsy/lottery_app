@@ -5,7 +5,7 @@ export function ChangeLotNum(props) {
   return (
     <div class="change-lot-num">
       <button
-        class="btn"
+        class="btn change-lot-num__btn"
         onClick={() => {
           props.addChosenNum(-1);
         }}
@@ -19,7 +19,7 @@ export function ChangeLotNum(props) {
         onChange={props.changeChosenNum}
       />
       <button
-        class="btn"
+        class="btn change-lot-num__btn"
         onClick={() => {
           props.addChosenNum(1);
         }}

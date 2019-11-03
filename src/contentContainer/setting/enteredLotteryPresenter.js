@@ -1,8 +1,8 @@
 import React from "react";
 
-export function DisplayEnterLotteryPresenter(props) {
+export function EnteredLotteryPresenter(props) {
   return (
-    <div>
+    <div class="enterd-lottery">
       {props.values.map((value, i) => {
         if (props.values.length === i + 1) {
           return value;

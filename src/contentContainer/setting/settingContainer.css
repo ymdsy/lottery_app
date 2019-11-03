@@ -1,8 +1,17 @@
-div#enterLottery {
+.enter-lottery {
   align-items: center;
   display: inline-flex;
   /* background-color: aliceblue; */
-  justify-content: center;
+  /* justify-content: center; */
   padding: 10px;
   width: 90%;
+}
+
+.enterd-lottery {
+  margin: 0px auto auto auto;
+  min-width: 40%;
+}
+
+.select-enter-mode__btn {
+  margin: 5px;
 }

@@ -2,3 +2,7 @@
   float: right;
   margin: auto 0 auto auto;
 }
+
+.change-lot-num__btn {
+  margin: auto 5px auto 5px;
+}

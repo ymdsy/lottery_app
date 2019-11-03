@@ -1,7 +1,7 @@
 import React from "react";
-import { SelectEnterModeContainer } from "./selectEnterMode/selectEnterModeContainer.js";
+import { SelectEnterModePresenter } from "./selectEnterModePresenter.js";
 import { EnterLotteryContainer } from "./enterLottery/enterLotteryContainer.js";
-import { DisplayEnterLotteryPresenter } from "./displayEnterLotteryPresenter";
+import { EnteredLotteryPresenter } from "./enteredLotteryPresenter";
 import "./settingContainer.css";
 
 const CSV_MODE = 0;
@@ -37,11 +37,11 @@ export class SettingContainer extends React.Component {
   render() {
     return (
       <div>
-        <SelectEnterModeContainer
+        <SelectEnterModePresenter
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
-        <div id="enterLottery">
+        <div class="enter-lottery">
           <EnterLotteryContainer
             csvMode={CSV_MODE}
             numberMode={NUMBER_MODE}
@@ -51,7 +51,7 @@ export class SettingContainer extends React.Component {
             }}
           />
           &nbsp;=>&nbsp;
-          <DisplayEnterLotteryPresenter values={this.state.parsedData} />
+          <EnteredLotteryPresenter values={this.state.parsedData} />
         </div>
       </div>
     );
