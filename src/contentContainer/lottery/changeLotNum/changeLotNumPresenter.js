@@ -1,18 +1,25 @@
 import React from "react";
-// import "./lotteryDisplayPresenter.css";
+import "./changeLotNumPresenter.css";
 
-export function ChangeNumOfPeople(props) {
+export function ChangeLotNum(props) {
   return (
-    <div>
+    <div class="change-lot-num">
       <button
+        class="btn"
         onClick={() => {
           props.addChosenNum(-1);
         }}
       >
         -
       </button>
-      <input type="text" value={props.num} onChange={props.changeChosenNum} />
+      <input
+        class="input"
+        type="text"
+        value={props.num}
+        onChange={props.changeChosenNum}
+      />
       <button
+        class="btn"
         onClick={() => {
           props.addChosenNum(1);
         }}

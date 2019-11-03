@@ -1,10 +1,10 @@
 import React from "react";
-import { ChangeNumOfPeople } from "./changeNumOfPeoplePresenter.js";
+import { ChangeLotNum } from "./changeLotNumPresenter.js";
 
-export class ChangeNumOfPeopleContainer extends React.Component {
+export class ChangeLotNumContainer extends React.Component {
   render() {
     return (
-      <ChangeNumOfPeople
+      <ChangeLotNum
         num={this.props.chosenNum}
         addChosenNum={num => this.props.addChosenNum(num)}
         changeChosenNum={this.props.changeChosenNum}

@@ -1,8 +1,9 @@
 import React from "react";
 import { LotteryDisplayContainer } from "./lotteryDisplay/lotteryDisplayContainer.js";
 import { LotteryButtonContainer } from "./lotteryButton/lotteryButtonContainer.js";
-import { ChangeNumOfPeopleContainer } from "./changeNumOfPeople/changeNumOfPeopleContainer.js";
+import { ChangeLotNumContainer } from "./changeLotNum/changeLotNumContainer.js";
 import { HistoryContainer } from "./history/historyContainer.js";
+import "./lotteryContainer.css";
 
 const NUM_FORMAT_ERR_MSG = "this value is not number or cannot calc.";
 const ALL_LOTS_DRAW_MSG = "all lots was draw.";
@@ -97,15 +98,17 @@ export class LotteryContainer extends React.Component {
           deleteHistory={() => this.deleteHistory()}
         />
         <LotteryDisplayContainer wonLots={this.state.latestWonLots} />
-        <LotteryButtonContainer
-          drawLots={() => this.drawLots()}
-          lotteryNums={this.props.lots}
-        />
-        <ChangeNumOfPeopleContainer
-          chosenNum={this.state.chosenNum}
-          addChosenNum={num => this.addChosenNum(num)}
-          changeChosenNum={this.changeChosenNum}
-        />
+        <div class="lottery-operator">
+          <LotteryButtonContainer
+            drawLots={() => this.drawLots()}
+            lotteryNums={this.props.lots}
+          />
+          <ChangeLotNumContainer
+            chosenNum={this.state.chosenNum}
+            addChosenNum={num => this.addChosenNum(num)}
+            changeChosenNum={this.changeChosenNum}
+          />
+        </div>
       </div>
     );
   }

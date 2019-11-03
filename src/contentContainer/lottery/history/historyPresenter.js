@@ -5,7 +5,7 @@ import { HistoryDeletePresenter } from "./historyDeletePresenter.js";
 export function HistoryPresenter(props) {
   return (
     <>
-      <button className="historyBtn" onClick={props.switchHistory}>
+      <button className="btn history__btn" onClick={props.switchHistory}>
         history
       </button>
       <div className={props.isOpen ? "history history__active" : "history"}>

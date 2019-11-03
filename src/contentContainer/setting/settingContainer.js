@@ -53,7 +53,6 @@ export class SettingContainer extends React.Component {
           &nbsp;=>&nbsp;
           <DisplayEnterLotteryPresenter values={this.state.parsedData} />
         </div>
-        <div>もう一個、背景画像入力フォーム</div>
       </div>
     );
   }

@@ -5,13 +5,13 @@ export function SwitchPanelPresenter(props) {
   return (
     <div id="switchPanelPresenter">
       <button
-        class="switchPanelPresenterBtn"
+        class="btn switch-panel__btn"
         onClick={() => props.switching(props.settingMode)}
       >
         SettingMode
       </button>
       <button
-        class="switchPanelPresenterBtn"
+        class="btn switch-panel__btn"
         onClick={() => props.switching(props.lotteryMode)}
       >
         lotteryMode
