@@ -1,3 +1,12 @@
-.enter-num__imput {
-  margin: 5px;
+.enter-num {
+  align-items: baseline;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+}
+.enter-num__input:first-child {
+  margin: 0 5px 0 0;
+}
+.enter-num__input:last-child {
+  margin: 0 0 0 5px;
 }

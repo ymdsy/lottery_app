@@ -1,6 +1,7 @@
 .switch-panel {
-  justify-content: flex-end;
   display: flex;
+  justify-content: flex-end;
+  min-width: 200px;
 }
 
 .switch-panel__btn {

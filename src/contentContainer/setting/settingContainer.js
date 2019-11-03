@@ -36,12 +36,12 @@ export class SettingContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="setting">
         <SelectEnterModePresenter
           mode={this.state.lotteryEnterMode}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
-        <div class="enter-lottery">
+        <div class="setting__enter-lottery">
           <EnterLotteryContainer
             csvMode={CSV_MODE}
             numberMode={NUMBER_MODE}
@@ -50,7 +50,7 @@ export class SettingContainer extends React.Component {
               this.updateParsedData(parsedData);
             }}
           />
-          &nbsp;=>&nbsp;
+          <div class="setting__hyphen">=></div>
           <EnteredLotteryPresenter values={this.state.parsedData} />
         </div>
       </div>
