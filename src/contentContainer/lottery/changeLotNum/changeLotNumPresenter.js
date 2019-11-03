@@ -3,7 +3,7 @@ import "./changeLotNumPresenter.css";
 
 export function ChangeLotNum(props) {
   return (
-    <div class="change-lot-num">
+    <div>
       <button
         class="btn change-lot-num__btn"
         onClick={() => {
@@ -14,7 +14,7 @@ export function ChangeLotNum(props) {
       </button>
       <input
         class="input"
-        type="text"
+        type="number"
         value={props.num}
         onChange={props.changeChosenNum}
       />

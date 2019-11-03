@@ -92,21 +92,21 @@ export class LotteryContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="lottery-container">
         <HistoryContainer
           wonLots={this.state.wonLots}
           deleteHistory={() => this.deleteHistory()}
         />
         <LotteryDisplayContainer wonLots={this.state.latestWonLots} />
         <div class="lottery-operator">
-          <LotteryButtonContainer
-            drawLots={() => this.drawLots()}
-            lotteryNums={this.props.lots}
-          />
           <ChangeLotNumContainer
             chosenNum={this.state.chosenNum}
             addChosenNum={num => this.addChosenNum(num)}
             changeChosenNum={this.changeChosenNum}
+          />
+          <LotteryButtonContainer
+            drawLots={() => this.drawLots()}
+            lotteryNums={this.props.lots}
           />
         </div>
       </div>

@@ -1,8 +1,12 @@
-div#switchPanelPresenter {
-  height: 40px;
+.switch-panel {
+  justify-content: flex-end;
+  display: flex;
 }
 
 .switch-panel__btn {
-  float: right;
-  margin: 5px;
+  margin-left: 10px;
+}
+
+.switch-panel__btn:first-child {
+  margin: 0;
 }

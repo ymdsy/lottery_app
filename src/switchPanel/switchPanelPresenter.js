@@ -3,7 +3,7 @@ import "./switchPanelPresenter.css";
 
 export function SwitchPanelPresenter(props) {
   return (
-    <div id="switchPanelPresenter">
+    <div class="switch-panel">
       <button
         class="btn switch-panel__btn"
         onClick={() => props.switching(props.settingMode)}

@@ -1,3 +1,10 @@
+.lottery-container {
+  margin: 10px 0;
+}
+
 .lottery-operator {
+  align-items: center;
   display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
 }

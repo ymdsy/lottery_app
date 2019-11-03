@@ -2,9 +2,8 @@
   text-align: center;
 }
 
-div {
-  /* border: 1px solid rgb(201, 198, 198);
-  margin: 10px; */
+#root {
+  padding: 15px;
 }
 
 .btn {
@@ -15,5 +14,9 @@ div {
 }
 
 .input {
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: darkgrey;
   font-size: 1em;
+  padding: 5px;
 }

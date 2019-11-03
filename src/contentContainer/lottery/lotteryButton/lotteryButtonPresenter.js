@@ -1,9 +1,10 @@
 import React from "react";
+import "./lotteryButtonPresenter.css";
 
 export function LotteryButton(props) {
   return (
     <button
-      class="btn"
+      class="btn lottery-btn"
       onClick={() => {
         props.drawLots();
       }}
