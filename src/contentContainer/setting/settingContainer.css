@@ -7,9 +7,10 @@
 }
 
 .setting__enter-lottery {
-  margin: 0px auto auto auto;
   display: flex;
+  justify-content: center;
   padding: 10px;
+  margin: 0px auto auto auto;
 }
 
 .select-enter-mode__btn {
