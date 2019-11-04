@@ -7,7 +7,7 @@ export class ChangeLotNumContainer extends React.Component {
       <ChangeLotNum
         num={this.props.chosenNum}
         addChosenNum={num => this.props.addChosenNum(num)}
-        changeChosenNum={this.props.changeChosenNum}
+        changeChosenNum={changedNum => this.props.changeChosenNum(changedNum)}
       />
     );
   }

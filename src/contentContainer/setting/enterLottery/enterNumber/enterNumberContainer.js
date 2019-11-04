@@ -23,7 +23,7 @@ export class EnterNumberContainer extends React.Component {
   enterStartNum(value) {
     const enterNum = parseInt(value);
 
-    if (this.isNotNomalNum(enterNum)) {
+    if (this.isInvalidNum(enterNum)) {
       return;
     }
 
@@ -45,7 +45,7 @@ export class EnterNumberContainer extends React.Component {
   enterEndNum(value) {
     const enterNum = parseInt(value);
 
-    if (this.isNotNomalNum(enterNum)) {
+    if (this.isInvalidNum(enterNum)) {
       return;
     }
 
@@ -63,12 +63,12 @@ export class EnterNumberContainer extends React.Component {
   }
 
   /**
-   * 正しい数値が入力されていない場合にtrueを返す。
+   * 不正な値が入力された場合にtrueを返す。
    * 数値が大きすぎると処理が重くなるので、1000未満の値を入力できることとする。
    *
    * @param 入力値 num
    */
-  isNotNomalNum(num) {
+  isInvalidNum(num) {
     if (typeof num !== "number" || num <= 0 || isNaN(num)) {
       return true;
     }
@@ -90,7 +90,7 @@ export class EnterNumberContainer extends React.Component {
     if (endNum - startNum <= 0) {
       return [];
     }
-    // ex: startNum=1, endNum=10 => [1,2,3,4,5,6,7,8,9,10]
+    // ex: startNum=3, endNum=10 => [3,4,5,6,7,8,9,10]
     return [...Array(endNum + 1 - startNum).keys()].map(i => i + startNum);
   }
 

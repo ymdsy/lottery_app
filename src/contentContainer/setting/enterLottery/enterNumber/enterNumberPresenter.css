@@ -5,8 +5,8 @@
   justify-content: center;
 }
 .enter-num__input:first-child {
-  margin: 0 5px 0 0;
+  margin-right: 5px;
 }
 .enter-num__input:last-child {
-  margin: 0 0 0 5px;
+  margin-left: 5px;
 }

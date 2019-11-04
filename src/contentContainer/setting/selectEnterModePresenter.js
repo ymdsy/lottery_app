@@ -1,6 +1,6 @@
 import React from "react";
 
-export function SelectEnterModePresenter(props) {
+export function SelectEnterMode(props) {
   return (
     <div>
       <button

@@ -18,14 +18,22 @@ class App extends React.Component {
     this.updateLots = this.updateLots.bind(this);
   }
 
+  /**
+   * くじ引きモードか設定モードかを切り替える。
+   * @param 切り替えるモードの固定数値 num
+   */
   switching(num) {
-    if (num === 0 || num === 1) {
+    if (num === LOTTERY_MODE || num === SETTING_MODE) {
       this.setState({
         mode: num
       });
     }
   }
 
+  /**
+   * くじびき対象となるデータを上書きする。
+   * @param くじの対象としたいデータ data
+   */
   updateLots(data) {
     this.setState({
       lots: data
@@ -42,8 +50,10 @@ class App extends React.Component {
           switching={num => this.switching(num)}
         />
         <ContentContainer
-          mode={this.state.mode}
+          lotteryMode={LOTTERY_MODE}
           lots={this.state.lots}
+          mode={this.state.mode}
+          settingMode={SETTING_MODE}
           updateLots={data => this.updateLots(data)}
         />
       </>

@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectEnterModePresenter } from "./selectEnterModePresenter.js";
+import { SelectEnterMode } from "./selectEnterModePresenter.js";
 import { EnterLotteryContainer } from "./enterLottery/enterLotteryContainer.js";
 import { EnteredLotteryPresenter } from "./enteredLotteryPresenter";
 import "./settingContainer.css";
@@ -18,6 +18,10 @@ export class SettingContainer extends React.Component {
     this.updateParsedData = this.updateParsedData.bind(this);
   }
 
+  /**
+   * くじの入力モードを切り変える。
+   * @param モードの数値 mode
+   */
   switchLotteryEnterMode(mode) {
     if (mode === CSV_MODE || mode === NUMBER_MODE) {
       this.setState({
@@ -26,6 +30,10 @@ export class SettingContainer extends React.Component {
     }
   }
 
+  /**
+   * パース済みのデータ（画面表示用）と、くじを更新する。
+   * @param パース済みのデータ parsedData
+   */
   updateParsedData(parsedData) {
     this.setState({
       parsedData: parsedData
@@ -37,10 +45,10 @@ export class SettingContainer extends React.Component {
   render() {
     return (
       <div class="setting">
-        <SelectEnterModePresenter
+        <SelectEnterMode
           csvMode={CSV_MODE}
-          numberMode={NUMBER_MODE}
           mode={this.state.lotteryEnterMode}
+          numberMode={NUMBER_MODE}
           switchMode={mode => this.switchLotteryEnterMode(mode)}
         />
         <div class="setting__enter-lottery">

@@ -16,7 +16,7 @@ export function ChangeLotNum(props) {
         class="input"
         type="number"
         value={props.num}
-        onChange={props.changeChosenNum}
+        onChange={event => props.changeChosenNum(event.target.value)}
       />
       <button
         class="btn change-lot-num__btn"

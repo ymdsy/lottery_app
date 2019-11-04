@@ -18,6 +18,7 @@ export class LotteryContainer extends React.Component {
       chosenNum: 3
     };
     this.drawLots = this.drawLots.bind(this);
+    this.deleteHistory = this.deleteHistory.bind(this);
     this.changeChosenNum = this.changeChosenNum.bind(this);
   }
 
@@ -41,10 +42,10 @@ export class LotteryContainer extends React.Component {
 
   /**
    * 一度に抽選するくじの数を変更するためのメソッド。
-   * @param {変更する人数} changeNum
+   * @param {変更する人数} changedNum
    */
-  changeChosenNum(event) {
-    const newNum = Number(event.target.value);
+  changeChosenNum(changedNum) {
+    const newNum = Number(changedNum);
     if (newNum === 0 || Number.isNaN(newNum) || newNum <= 0) {
       console.log(NUM_FORMAT_ERR_MSG);
       return;
@@ -53,13 +54,16 @@ export class LotteryContainer extends React.Component {
       chosenNum: newNum
     });
   }
+
   /**
    * くじを引くメソッド。
    * 引かれたくじは抽選可能なくじから消え、引かれたくじとして登録される。
    */
-  drawLots = () => {
+  drawLots() {
     const latestWonLots = [];
     const target = this.state.targetLots.slice();
+
+    // くじを引く
     for (let i = 0; i < this.state.chosenNum; i++) {
       //　これ以上くじが引けないエラー
       if (target.length === 0) {
@@ -71,7 +75,7 @@ export class LotteryContainer extends React.Component {
       target.splice(drawLotIndex, 1);
     }
 
-    // 取得された最新のくじを引かれたくじに追加
+    // 取得された最新のくじを抽選済みのくじに追加
     const wonLots = this.state.wonLots.slice();
     latestWonLots.map(lot => wonLots.push(lot));
 
@@ -80,8 +84,11 @@ export class LotteryContainer extends React.Component {
       wonLots: wonLots,
       targetLots: target
     });
-  };
+  }
 
+  /**
+   * 抽選履歴を削除する。
+   */
   deleteHistory() {
     this.setState({
       targetLots: this.props.lots,
@@ -95,17 +102,17 @@ export class LotteryContainer extends React.Component {
       <div class="lottery-container">
         <HistoryContainer
           wonLots={this.state.wonLots}
-          deleteHistory={() => this.deleteHistory()}
+          deleteHistory={this.deleteHistory}
         />
         <LotteryDisplayContainer wonLots={this.state.latestWonLots} />
         <div class="lottery-operator">
           <ChangeLotNumContainer
             chosenNum={this.state.chosenNum}
             addChosenNum={num => this.addChosenNum(num)}
-            changeChosenNum={this.changeChosenNum}
+            changeChosenNum={changedNum => this.changeChosenNum(changedNum)}
           />
           <LotteryButtonContainer
-            drawLots={() => this.drawLots()}
+            drawLots={this.drawLots}
             lotteryNums={this.props.lots}
           />
         </div>

@@ -10,6 +10,9 @@ export class HistoryContainer extends React.Component {
     this.switchHistory = this.switchHistory.bind(this);
   }
 
+  /**
+   * 履歴の表示を切り替える。
+   */
   switchHistory() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -19,7 +22,7 @@ export class HistoryContainer extends React.Component {
   render() {
     return (
       <HistoryPresenter
-        deleteHistory={() => this.props.deleteHistory()}
+        deleteHistory={this.props.deleteHistory}
         wonLots={this.props.wonLots}
         switchHistory={this.switchHistory}
         isOpen={this.state.isOpen}

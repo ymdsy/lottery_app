@@ -19,7 +19,7 @@ export function HistoryPresenter(props) {
             <li key={lot.toString()}>{lot}</li>
           ))}
         </ul>
-        <HistoryDeletePresenter deleteHistory={() => props.deleteHistory()} />
+        <HistoryDeletePresenter deleteHistory={props.deleteHistory} />
       </div>
     </>
   );
