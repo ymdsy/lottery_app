@@ -4,7 +4,7 @@ export function SelectEnterMode(props) {
   return (
     <div>
       <button
-        class={
+        className={
           props.mode === props.csvMode
             ? "btn btn_active select-enter-mode__btn"
             : "btn select-enter-mode__btn"
@@ -14,7 +14,7 @@ export function SelectEnterMode(props) {
         CSVMode
       </button>
       <button
-        class={
+        className={
           props.mode === props.numberMode
             ? "btn btn_active select-enter-mode__btn"
             : "btn select-enter-mode__btn"

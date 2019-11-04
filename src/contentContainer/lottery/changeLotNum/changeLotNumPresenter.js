@@ -5,7 +5,7 @@ export function ChangeLotNum(props) {
   return (
     <div>
       <button
-        class="btn change-lot-num__btn"
+        className="btn change-lot-num__btn"
         onClick={() => {
           props.addChosenNum(-1);
         }}
@@ -13,13 +13,13 @@ export function ChangeLotNum(props) {
         -
       </button>
       <input
-        class="input"
+        className="input"
         type="number"
         value={props.num}
         onChange={event => props.changeChosenNum(event.target.value)}
       />
       <button
-        class="btn change-lot-num__btn"
+        className="btn change-lot-num__btn"
         onClick={() => {
           props.addChosenNum(1);
         }}

@@ -8,9 +8,13 @@ export class EnterCSVContainer extends React.Component {
     this.enterCsv = throttle(this.enterCsv.bind(this), 1500);
   }
 
+  /**
+   * 入力されたcsvをもとに、くじを更新する。
+   * @param 入力値（csv） value
+   */
   enterCsv(value) {
     const parsedData = value
-      .split(/[ ]{0,},{1,}/)
+      .split(/[ /\n/g/\r/g"]{0,},{1,}/)
       .filter(value => value !== " " && value.length > 0);
     this.props.updateParsedData(parsedData);
   }

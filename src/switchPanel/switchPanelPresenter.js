@@ -3,9 +3,9 @@ import "./switchPanelPresenter.css";
 
 export function SwitchPanelPresenter(props) {
   return (
-    <div class="switch-panel">
+    <div className="switch-panel">
       <button
-        class={
+        className={
           props.mode === props.settingMode
             ? "btn btn_active switch-panel__btn"
             : "btn switch-panel__btn"
@@ -15,7 +15,7 @@ export function SwitchPanelPresenter(props) {
         SettingMode
       </button>
       <button
-        class={
+        className={
           props.mode === props.lotteryMode
             ? "btn btn_active switch-panel__btn"
             : "btn switch-panel__btn"

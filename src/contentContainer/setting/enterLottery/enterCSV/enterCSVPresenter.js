@@ -5,7 +5,7 @@ export function EnterCSVPresenter(props) {
   return (
     <>
       <textarea
-        class="textarea enter-lottery_textarea"
+        className="textarea enter-lottery_textarea"
         onChange={event => props.enterCsv(event.target.value)}
       />
     </>
