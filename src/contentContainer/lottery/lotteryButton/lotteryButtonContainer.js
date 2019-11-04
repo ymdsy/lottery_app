@@ -3,6 +3,6 @@ import { LotteryButton } from "./lotteryButtonPresenter.js";
 
 export class LotteryButtonContainer extends React.Component {
   render() {
-    return <LotteryButton drawLots={() => this.props.drawLots()} />;
+    return <LotteryButton drawLots={this.props.drawLots} />;
   }
 }
