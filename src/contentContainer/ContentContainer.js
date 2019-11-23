@@ -113,6 +113,7 @@ export class ContentContainer extends React.Component {
         <SettingContainer
           updateLots={data => {
             this.props.updateLots(data);
+            this.deleteHistory();
           }}
         />
       );
