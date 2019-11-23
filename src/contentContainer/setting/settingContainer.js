@@ -2,7 +2,7 @@ import React from "react";
 import { SelectEnterMode } from "./selectEnterModePresenter.js";
 import { EnterLotteryContainer } from "./enterLottery/enterLotteryContainer.js";
 import { EnteredLotteryPresenter } from "./enteredLotteryPresenter";
-import { SetBackgroundContainer } from "./setBackground/setBackgroundContainer.js";
+import { SetBackgroundPresenter } from "./setBackgroundPresenter.js";
 import "./settingContainer.css";
 
 const CSV_MODE = 0;
@@ -67,7 +67,7 @@ export class SettingContainer extends React.Component {
           </div>
         </div>
         <div className="setting">
-          <SetBackgroundContainer
+          <SetBackgroundPresenter
             bgImgUrl={this.props.bgImgUrl}
             bgMode={this.props.bgMode}
             bgOriginalMode={this.props.bgOriginalMode}

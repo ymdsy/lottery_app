@@ -61,7 +61,7 @@ class App extends React.Component {
 
   /**
    * 背景画像の表示方法を変更する
-   * @param 背景画像の表示方法
+   * @param 背景画像の表示方法モード mode
    */
   changeBgMode(mode) {
     this.setState({
@@ -71,7 +71,6 @@ class App extends React.Component {
 
   /**
    * 背景画像のstyleの生成を行う。
-   *
    */
   getBgStyle() {
     const style = {

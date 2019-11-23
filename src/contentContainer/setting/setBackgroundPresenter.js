@@ -4,7 +4,7 @@ import "./setBackgroundPresenter.css";
 export function SetBackgroundPresenter(props) {
   return (
     <>
-      <div className="setBgPresenter">背景画像</div>
+      <div className="setBgPresenter">背景画像変更</div>
       <div className="setBgPresenter">
         URL：
         <input
