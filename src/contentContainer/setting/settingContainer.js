@@ -2,6 +2,7 @@ import React from "react";
 import { SelectEnterMode } from "./selectEnterModePresenter.js";
 import { EnterLotteryContainer } from "./enterLottery/enterLotteryContainer.js";
 import { EnteredLotteryPresenter } from "./enteredLotteryPresenter";
+import { SetBackgroundContainer } from "./setBackground/setBackgroundContainer.js";
 import "./settingContainer.css";
 
 const CSV_MODE = 0;
@@ -44,26 +45,38 @@ export class SettingContainer extends React.Component {
 
   render() {
     return (
-      <div className="setting">
-        <SelectEnterMode
-          csvMode={CSV_MODE}
-          mode={this.state.lotteryEnterMode}
-          numberMode={NUMBER_MODE}
-          switchMode={mode => this.switchLotteryEnterMode(mode)}
-        />
-        <div className="setting__enter-lottery">
-          <EnterLotteryContainer
+      <>
+        <div className="setting">
+          <SelectEnterMode
             csvMode={CSV_MODE}
-            numberMode={NUMBER_MODE}
             mode={this.state.lotteryEnterMode}
-            updateParsedData={parsedData => {
-              this.updateParsedData(parsedData);
-            }}
+            numberMode={NUMBER_MODE}
+            switchMode={mode => this.switchLotteryEnterMode(mode)}
           />
-          <div className="setting__hyphen">=></div>
-          <EnteredLotteryPresenter values={this.state.parsedData} />
+          <div className="setting__enter-lottery">
+            <EnterLotteryContainer
+              csvMode={CSV_MODE}
+              numberMode={NUMBER_MODE}
+              mode={this.state.lotteryEnterMode}
+              updateParsedData={parsedData => {
+                this.updateParsedData(parsedData);
+              }}
+            />
+            <div className="setting__hyphen">=></div>
+            <EnteredLotteryPresenter values={this.state.parsedData} />
+          </div>
         </div>
-      </div>
+        <div className="setting">
+          <SetBackgroundContainer
+            bgImgUrl={this.props.bgImgUrl}
+            bgMode={this.props.bgMode}
+            bgOriginalMode={this.props.bgOriginalMode}
+            bgFullMode={this.props.bgFullMode}
+            changeBgMode={this.props.changeBgMode}
+            updateBgImgUrl={url => this.props.updateBgImgUrl(url)}
+          />
+        </div>
+      </>
     );
   }
 }

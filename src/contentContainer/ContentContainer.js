@@ -115,6 +115,12 @@ export class ContentContainer extends React.Component {
             this.props.updateLots(data);
             this.deleteHistory();
           }}
+          bgImgUrl={this.props.bgImgUrl}
+          bgMode={this.props.bgMode}
+          bgOriginalMode={this.props.bgOriginalMode}
+          bgFullMode={this.props.bgFullMode}
+          changeBgMode={this.props.changeBgMode}
+          updateBgImgUrl={url => this.props.updateBgImgUrl(url)}
         />
       );
     }
